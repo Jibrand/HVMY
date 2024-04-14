@@ -16,6 +16,7 @@ import SAEPiologo_stickercut from '../../img/new/SAEPiologo_stickercut.png';
 import BLUMIRApocscreen from '../../img/new/SENTEONpocscreen.jpg';
 import HV_NEW_AI_Machine from '../../img/new/HV_NEW_AI_Machine_blues (1).png';
 
+
 const Quote = lazy(() => import('./Quote'));
 const Paragraph = lazy(() => import('./Paragraph'));
 const Hero = lazy(() => import('./Hero'));
