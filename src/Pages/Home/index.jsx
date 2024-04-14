@@ -17,10 +17,13 @@ import BLUMIRApocscreen from '../../img/new/SENTEONpocscreen.jpg';
 import HV_NEW_AI_Machine from '../../img/new/HV_NEW_AI_Machine_blues (1).png';
 
 const Quote = lazy(() => import('./Quote'));
+const Paragraph = lazy(() => import('./Paragraph'));
+const Hero = lazy(() => import('./Hero'));
 
 const index = () => {
     return (
         <>
+            <Hero />
             <section className="bg-transparent container mx-auto py-24 lg:sm:w-[80%] md:sm:w-[80%]" id="view-down">
                 <div className="custom-container">
                     <div className="row">
@@ -141,8 +144,9 @@ const index = () => {
                                     Immerse yourself in the HACKERverse®
                                 </button>
                             </div>
-                            {/* 
+                            <br/>
                             <Paragraph />
+                            {/* 
                             <Testimonials />
                             <Index1 /> */}
 
