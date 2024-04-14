@@ -15,6 +15,14 @@ import HVbsideslogointro from '../../img/new/HV-bsides-logo-intro.png';
 import SAEPiologo_stickercut from '../../img/new/SAEPiologo_stickercut.png';
 import BLUMIRApocscreen from '../../img/new/SENTEONpocscreen.jpg';
 import HV_NEW_AI_Machine from '../../img/new/HV_NEW_AI_Machine_blues (1).png';
+import orbmp4 from '../../img/orb/orb.gif';
+import orbtwitter from '../../img/twitter.png';
+import redorbyoutube from '../../img/redorb-youtube.png';
+import redorbinsta from '../../img/redorb-insta.png';
+import redorbdiscord from '../../img/redorb-discord.png';
+import redorbreddit from '../../img/redorb-reddit.png';
+import redorbtwitch from '../../img/redorb-twitch.png';
+import SideChat from '../../img/support.svg';
 
 import Quote from './Quote';
 import Paragraph from './Paragraph';
@@ -167,6 +175,46 @@ const index = () => {
                         </div>
                     </div>
                 </div>
+                <div className="speak">
+        <div className="sup-icons-cont">
+          <a href="https://discord.gg/hacer-rs-952244889192648775" target="_blank" rel="noopener noreferrer">
+            <div className="sup-icon">
+              <img loading="lazy" src={redorbdiscord} alt="Discord" />
+            </div>
+          </a>
+          <a href="https://www.instagram.com/_hackerverse_/" target="_blank" rel="noopener noreferrer">
+            <div className="sup-icon">
+              <img loading="lazy" src={redorbinsta} alt="Instagram" />
+            </div>
+          </a>
+          <a href="https://www.youtube.com/@theHACKERverse" target="_blank" rel="noopener noreferrer">
+            <div className="sup-icon">
+              <img loading="lazy" src={redorbyoutube} alt="Youtube" />
+            </div>
+          </a>
+          <a href="https://www.reddit.com/u/theHACKERverse/" target="_blank" rel="noopener noreferrer">
+            <div className="sup-icon">
+              <img loading="lazy" src={redorbreddit} alt="Reddit" />
+            </div>
+          </a>
+          <a href="https://www.twitch.tv/thehackerverse" target="_blank" rel="noopener noreferrer">
+            <div className="sup-icon">
+              <img loading="lazy" src={redorbtwitch} alt="Twitch" />
+            </div>
+          </a>
+          <a href="https://twitter.com/_HACKERverse_" target="_blank" rel="noopener noreferrer">
+            <div className="sup-icon">
+              <img loading="lazy" src={orbtwitter} alt="Twitter" />
+            </div>
+          </a>
+        </div>
+        <div className="sup-rota">
+          <img loading="lazy" src={SideChat} alt="Support Chat" />
+        </div>
+        <div className="video-cutter">
+          <img loading="lazy" src={orbmp4} alt="Orb GIF" />
+        </div>
+      </div>
             </section>
         </>
     )
