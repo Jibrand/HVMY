@@ -80,16 +80,16 @@ const Index = () => {
                 <>
                     {Spotifys.length == 0 ? (
                         <div className="flex justify-center items-center  mx-auto">
-                            <p className="text-xl text-gray-300 mb-20">No Spotify available</p>
+                            <p className="text-xl text-gray-300 ">No Spotify available</p>
                         </div>
                     ) : (
                         <>
                             <Carousel responsive={responsive} vfocusOnSelect={true} ref={carouselRef}>
                                 {Spotifys.map((member) => (
                                     <>
-                                        <section className="text-gray-600 body-font -mt-10 bg-transparent ">
+                                        <section className="text-gray-600 body-font -mt-0 bg-transparent ">
                                             <div className="container mx-auto   rounded-3xl  lg:p-32 md:p-32 p-2">
-                                                <div className="relative  picbox1 rounded-3xl overflow-hidden lg:pt-46 md:pt-46 pt-80">
+                                                <div className="relative  picbox1 rounded-3xl overflow-hidden lg:pt-46 md:pt-46 pt-96 lg:mx-0 md:mx-0 mx-10 ">
                                                     <iframe
                                                         className=" overflow-hidden absolute inset-0 w-full h-full rounded-lg  "
                                                         src={member.link}

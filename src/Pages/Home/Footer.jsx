@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return (
-        <>   <footer className=" bg-transparent    border border-green-400 rounded-2xl picbox1 py-5  mt-10 ">
-            <div className="mx-auto w-full max-w-screen-xl p-4 ">
+        <>  
+         <footer className=" bg-transparent lg:mx-0 md:mx-0 mx-10  border border-green-400 rounded-2xl picbox1 py-5  mt-10 ">
+            <div className="mx-auto w-full max-w-screen-xl p-4   ">
                 <div className="md:flex md:justify-between">
                     <div className="mb-6 md:mb-0">
                         <a href="/" className="flex items-center">

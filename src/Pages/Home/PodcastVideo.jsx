@@ -87,9 +87,9 @@ const Index = () => {
                             <Carousel responsive={responsive} focusOnSelect={true} ref={carouselRef} >
                                 {Vodcasts.map((member) => (
                                     <>
-                                        <section className="text-gray-600 body-font  bg-transparent -mt-24  ">
+                                        <section className="text-gray-600 body-font  bg-transparent    ">
                                             <div className="container px- py-[20px] mx-auto lg:p-32 md:p-32 p-2   bg-transparent  rounded-3xl">
-                                                <div className="relative picbox1  bg-transparent  rounded-3xl" style={{ paddingTop: "56.25%" }}>
+                                                <div className="relative picbox1  bg-transparent  rounded-3xl lg:mx-0 md:mx-0 mx-10 " style={{ paddingTop: "56.25%" }}>
                                                     <iframe
                                                         className="absolute inset-0 w-full h-full rounded-3xl   "
                                                         src={member.link}
