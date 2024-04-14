@@ -133,6 +133,7 @@ function Dashboard() {
     const [isLoading, setLoading] = useState(false); // State for loading indicator
     const [isLoadingu, setLoadingu] = useState(false); // State for loading indicator
     const [isLoadingd, setLoadingd] = useState(false); // State for loading indicator
+    const [dLoading, setDLoading] = useState(true)
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -164,9 +165,10 @@ function Dashboard() {
         try {
             const response = await axios.get(`${Api}/hv-comapny/youtube/getall`);
             setVodcasts(response.data);
-
+            setDLoading(false)
         } catch (error) {
             console.error('Error fetching Vodcasts:', error);
+            setDLoading(false)
         }
     };
 
@@ -221,44 +223,51 @@ function Dashboard() {
                     <section className=" text-white body-font">
                         <section className="text-gray-600 body-font">
                             <div className="containera px-5 py- mx-auto">
-
-                                {Vodcasts.length === 0 ? ( // Check if there are no Vodcasts
-                                    <div className="flex justify-center items-center h-64">
-                                        <p className="text-xl text-gray-300">No Vodcast Video available</p>
+                                {dLoading ? ( // Show loading state
+                                    <div className="flex justify-center items-center h-screen mx-auto">
+                                        <p className="text-2xl text-gray-500">Loading...</p>
                                     </div>
                                 ) : (
-                                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                                        {Vodcasts.map((Video) => (
-                                            <>
-                                                <section className="text-gray-600 body-font">
-                                                    <div className="container px- py-[20px] mx-auto  ">
-                                                        {/* Vodcast Video Embed */}
-                                                        <div className="relative overflow-hidden lg:pt-46 md:pt-46 pt-80">
+                                    <>
+                                        {Vodcasts.length === 0 ? ( // Check if there are no Vodcasts
+                                            <div className="flex justify-center items-center h-64">
+                                                <p className="text-xl text-gray-300">No Vodcast Video available</p>
+                                            </div>
+                                        ) : (
+                                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                                {Vodcasts.map((Video) => (
+                                                    <>
+                                                        <section className="text-gray-600 body-font">
+                                                            <div className="container px- py-[20px] mx-auto  ">
+                                                                {/* Vodcast Video Embed */}
+                                                                <div className="relative overflow-hidden lg:pt-46 md:pt-46 pt-80">
 
 
-                                                            {/* Replace 'VIDEO_ID' with your Vodcast video ID */}
-                                                            <iframe
-                                                                className=" overflow-hidden absolute inset-0 w-full h-full rounded-lg "
-                                                                src={Video.link}
-                                                                title="Vodcast Video"
-                                                                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-                                                            ></iframe>
-                                                             <div className="absolute top-4 right-4 flex space-x-4">
-                                                            <button onClick={() => handleUpdate(Video._id)} className="bg-gray-600 text-white rounded-3xl p-2 font-medium hover:bg-gray-800">
-                                                                <FontAwesomeIcon icon={faEdit} className="mr-" />
-                                                            </button>
-                                                            <button onClick={() => handleDelete(Video._id)} className="bg-red-600 text-white rounded-3xl p-2 font-medium hover:bg-red-800">
-                                                                <FontAwesomeIcon icon={faTrash} className="mr-" />
-                                                            </button>
-                                                        </div>
-                                                        </div>
-                                        
-                                                    </div>
-                                                </section>
-                                            </>
-                                        ))}
+                                                                    {/* Replace 'VIDEO_ID' with your Vodcast video ID */}
+                                                                    <iframe
+                                                                        className=" overflow-hidden absolute inset-0 w-full h-full rounded-lg "
+                                                                        src={Video.link}
+                                                                        title="Vodcast Video"
+                                                                        allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                                                                    ></iframe>
+                                                                    <div className="absolute top-4 right-4 flex space-x-4">
+                                                                        <button onClick={() => handleUpdate(Video._id)} className="bg-gray-600 text-white rounded-3xl p-2 font-medium hover:bg-gray-800">
+                                                                            <FontAwesomeIcon icon={faEdit} className="mr-" />
+                                                                        </button>
+                                                                        <button onClick={() => handleDelete(Video._id)} className="bg-red-600 text-white rounded-3xl p-2 font-medium hover:bg-red-800">
+                                                                            <FontAwesomeIcon icon={faTrash} className="mr-" />
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
 
-                                    </div>
+                                                            </div>
+                                                        </section>
+                                                    </>
+                                                ))}
+
+                                            </div>
+                                        )}
+                                    </>
                                 )}
                             </div>
                         </section>

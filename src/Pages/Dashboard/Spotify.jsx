@@ -132,6 +132,7 @@ function Dashboard() {
     const [isLoading, setLoading] = useState(false); // State for loading indicator
     const [isLoadingu, setLoadingu] = useState(false); // State for loading indicator
     const [isLoadingd, setLoadingd] = useState(false); // State for loading indicator
+    const [dLoading, setDLoading] = useState(true)
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -162,9 +163,10 @@ function Dashboard() {
         try {
             const response = await axios.get(`${Api}/hv-comapny/Spotify/getall`);
             setSpotifys(response.data);
-
+            setDLoading(false)
         } catch (error) {
             console.error('Error fetching Spotifys:', error);
+            setDLoading(false)
         }
     };
 
@@ -219,42 +221,49 @@ function Dashboard() {
                     <section className=" text-white body-font">
                         <section className="text-gray-600 body-font">
                             <div className="containera px-5 py- mx-auto">
-
-                                {Spotifys.length === 0 ? ( // Check if there are no Spotifys
-                                    <div className="flex justify-center items-center h-64">
-                                        <p className="text-xl text-gray-300">No Spotify Podcast available</p>
+                                {dLoading ? ( // Show loading state
+                                    <div className="flex justify-center items-center h-screen mx-auto">
+                                        <p className="text-2xl text-gray-500">Loading...</p>
                                     </div>
                                 ) : (
-                                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                                        {Spotifys.map((Podcast, index) => (
-                                            <section key={index} className="text-gray-600 body-font">
-                                                <div className="container px- py-[20px] mx-auto  ">
-                                                    {/* YouTube Video Embed */}
-                                                    <div className="relative overflow-hidden lg:pt-46 md:pt-46 pt-80">
-                                                        {/* Replace 'VIDEO_ID' with your YouTube video ID */}
-                                                        <iframe
-                                                            className="overflow-hidden absolute inset-0 w-full h-full rounded-lg  "
-                                                            src={Podcast.link}
-                                                            title="YouTube Video"
-                                                            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-                                                        ></iframe>
+                                    <>
+                                        {Spotifys.length === 0 ? ( // Check if there are no Spotifys
+                                            <div className="flex justify-center items-center h-64">
+                                                <p className="text-xl text-gray-300">No Spotify Podcast available</p>
+                                            </div>
+                                        ) : (
+                                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                                {Spotifys.map((Podcast, index) => (
+                                                    <section key={index} className="text-gray-600 body-font">
+                                                        <div className="container px- py-[20px] mx-auto  ">
+                                                            {/* YouTube Video Embed */}
+                                                            <div className="relative overflow-hidden lg:pt-46 md:pt-46 pt-80">
+                                                                {/* Replace 'VIDEO_ID' with your YouTube video ID */}
+                                                                <iframe
+                                                                    className="overflow-hidden absolute inset-0 w-full h-full rounded-lg  "
+                                                                    src={Podcast.link}
+                                                                    title="YouTube Video"
+                                                                    allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                                                                ></iframe>
 
-                                                        {/* Font Awesome icons for update and delete actions */}
-                                                        <div className="absolute top-4 left-1 flex space-x-4">
-                                                            <button onClick={() => handleUpdate(Podcast._id)} className="bg-gray-600 text-white rounded-3xl p-2 font-medium hover:bg-gray-800">
-                                                                <FontAwesomeIcon icon={faEdit} className="mr-0" />
-                                                            </button>
-                                                            <button onClick={() => handleDelete(Podcast._id)} className="bg-red-600 text-white rounded-3xl p-2   font-medium hover:bg-red-800">
-                                                                <FontAwesomeIcon icon={faTrash} className="ml-0" />
-                                                            </button>
+                                                                {/* Font Awesome icons for update and delete actions */}
+                                                                <div className="absolute top-4 left-1 flex space-x-4">
+                                                                    <button onClick={() => handleUpdate(Podcast._id)} className="bg-gray-600 text-white rounded-3xl p-2 font-medium hover:bg-gray-800">
+                                                                        <FontAwesomeIcon icon={faEdit} className="mr-0" />
+                                                                    </button>
+                                                                    <button onClick={() => handleDelete(Podcast._id)} className="bg-red-600 text-white rounded-3xl p-2   font-medium hover:bg-red-800">
+                                                                        <FontAwesomeIcon icon={faTrash} className="ml-0" />
+                                                                    </button>
+                                                                </div>
+
+                                                            </div>
                                                         </div>
-                                                 
-                                                    </div>
-                                                </div>
-                                            </section>
-                                        ))}
+                                                    </section>
+                                                ))}
 
-                                    </div>
+                                            </div>
+                                        )}
+                                    </>
                                 )}
                             </div>
                         </section>

@@ -269,6 +269,7 @@ function Dashboard() {
     const [isLoadingu, setLoadingu] = useState(false); // State for loading indicator
     const [isLoadingd, setLoadingd] = useState(false); // State for loading indicator
     const [isLoadinglogin, setisLoadinglogin] = useState(true); // State for loading indicator
+    const [dLoading, setDLoading] = useState(true)
     const navigate = useNavigate()
 
     useEffect(() => {

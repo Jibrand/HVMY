@@ -281,6 +281,7 @@ function Dashboard() {
     const [isLoading, setLoading] = useState(false); // State for loading indicator
     const [isLoadingu, setLoadingu] = useState(false); // State for loading indicator
     const [isLoadingd, setLoadingd] = useState(false); // State for loading indicator
+    const [dLoading, setDLoading] = useState(true)
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -312,9 +313,10 @@ function Dashboard() {
         try {
             const response = await axios.get(`${Api}/hv-comapny/Team/getall`);
             setTeams(response.data);
-
+            setDLoading(false)
         } catch (error) {
             console.error('Error fetching Teams:', error);
+            setDLoading(false)
         }
     };
 
@@ -369,40 +371,47 @@ function Dashboard() {
                     <section className=" text-white body-font">
                         <section className="text-gray-600 body-font">
                             <div className="containera px-5 py- mx-auto">
-
-                                {Teams.length === 0 ? ( // Check if there are no Teams
-                                    <div className="flex justify-center items-center h-64">
-                                        <p className="text-xl text-gray-300">No Team available</p>
+                                {dLoading ? ( // Show loading state
+                                    <div className="flex justify-center items-center h-screen mx-auto">
+                                        <p className="text-2xl text-gray-500">Loading...</p>
                                     </div>
                                 ) : (
-                                    <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
-                                        {Teams.map((testimonial, index) => (
-                                            <div key={index} className="max-w-xl mt-12 mx-auto p-4 mb-4 cursor-pointer picbox1 rounded-2xl ">
-                                                <div className="flex flex-col items-center text-center">
-                                                    <img src={testimonial.pic} className="w-28 h-28 rounded-full shadow-[0_2px_22px_-4px_rgba(93,96,127,0.6)] border-2 border-white" />
-                                                    <div className="mt-4">
-                                                        <h4 className="text-sm font-extrabold text-white">{testimonial.name}</h4>
-                                                        <p className="text-xs text-[#a0ff00] font-bold mt-1">{testimonial.designation}</p>
-                                                    </div>
-                                                </div>
-                                                <div className="mt-4 text-center">
-                                                    <p className="text-sm leading-relaxed text-gray-400">{testimonial.Team}</p>
-                                                </div>
-
-                                                {/* Font Awesome icons for update and delete actions */}
-                                                <div className="flex justify-center mt-4 space-x-4">
-                                                    <button className="bg-gray-600 text-white rounded-md p-2 font-medium hover:bg-gray-800" onClick={() => handleUpdate(testimonial._id)}>
-                                                        <FontAwesomeIcon icon={faEdit} className="mr" />
-                                                    </button>
-                                                    <button className="bg-red-600 text-white rounded-md px-2 font-medium hover:bg-red-800" onClick={() => handleDelete(testimonial._id)}>
-                                                        <FontAwesomeIcon icon={faTrash} className="mr-" />
-                                                    </button>
-                                                </div>
+                                    <>
+                                        {Teams.length === 0 ? ( // Check if there are no Teams
+                                            <div className="flex justify-center items-center h-64">
+                                                <p className="text-xl text-gray-300">No Team available</p>
                                             </div>
+                                        ) : (
+                                            <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
+                                                {Teams.map((testimonial, index) => (
+                                                    <div key={index} className="max-w-xl mt-12 mx-auto p-4 mb-4 cursor-pointer picbox1 rounded-2xl ">
+                                                        <div className="flex flex-col items-center text-center">
+                                                            <img src={testimonial.pic} className="w-28 h-28 rounded-full shadow-[0_2px_22px_-4px_rgba(93,96,127,0.6)] border-2 border-white" />
+                                                            <div className="mt-4">
+                                                                <h4 className="text-sm font-extrabold text-white">{testimonial.name}</h4>
+                                                                <p className="text-xs text-[#a0ff00] font-bold mt-1">{testimonial.designation}</p>
+                                                            </div>
+                                                        </div>
+                                                        <div className="mt-4 text-center">
+                                                            <p className="text-sm leading-relaxed text-gray-400">{testimonial.Team}</p>
+                                                        </div>
 
-                                        ))}
+                                                        {/* Font Awesome icons for update and delete actions */}
+                                                        <div className="flex justify-center mt-4 space-x-4">
+                                                            <button className="bg-gray-600 text-white rounded-md p-2 font-medium hover:bg-gray-800" onClick={() => handleUpdate(testimonial._id)}>
+                                                                <FontAwesomeIcon icon={faEdit} className="mr" />
+                                                            </button>
+                                                            <button className="bg-red-600 text-white rounded-md px-2 font-medium hover:bg-red-800" onClick={() => handleDelete(testimonial._id)}>
+                                                                <FontAwesomeIcon icon={faTrash} className="mr-" />
+                                                            </button>
+                                                        </div>
+                                                    </div>
 
-                                    </div>
+                                                ))}
+
+                                            </div>
+                                        )}
+                                    </>
                                 )}
                             </div>
                         </section>

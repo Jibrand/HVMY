@@ -36,7 +36,7 @@ const Popup = ({ onClose, fetchReviews, setLoading, isLoading }) => {
     };
 
     const handleAddReview = () => {
-        if (name == '' || !selectedImage ||  review == '' || designation == '') {
+        if (name == '' || !selectedImage || review == '' || designation == '') {
             toast.error('Please fill all fields');
             return;
         }
@@ -109,7 +109,7 @@ const Popup = ({ onClose, fetchReviews, setLoading, isLoading }) => {
                 <div className="mb-6">
                     <input disabled={isLoading} type="text" placeholder="Name" className="w-full border-gray-300 rounded-md p-2" value={name} onChange={(e) => setname(e.target.value)} />
                 </div>
-          
+
                 <div className="mb-6">
                     <input disabled={isLoading} type="text" placeholder="Designation" className="w-full border-gray-300 rounded-md p-2" value={designation} onChange={(e) => setDesignation(e.target.value)} />
                 </div>
@@ -169,7 +169,7 @@ const Popup1 = ({ onClose, fetchReviews, ReviewId, setLoadingu, isLoadingu }) =>
 
     const handleUpdateReview = async () => {
         setLoadingu(true);
-        if (name == ''   || review == '' || designation == '') {
+        if (name == '' || review == '' || designation == '') {
             return
         }
         if (selectedImage != null) {
@@ -254,7 +254,7 @@ const Popup1 = ({ onClose, fetchReviews, ReviewId, setLoadingu, isLoadingu }) =>
                 <div className="mb-6">
                     <input disabled={isLoadingu} type="text" placeholder="Name" className="w-full border-gray-300 rounded-md p-2" value={name} onChange={(e) => setname(e.target.value)} />
                 </div>
-           
+
                 <div className="mb-6">
                     <input disabled={isLoadingu} type="text" placeholder="Designation" className="w-full border-gray-300 rounded-md p-2" value={designation} onChange={(e) => setDesignation(e.target.value)} />
                 </div>
@@ -276,7 +276,9 @@ function Dashboard() {
     const [isLoading, setLoading] = useState(false); // State for loading indicator
     const [isLoadingu, setLoadingu] = useState(false); // State for loading indicator
     const [isLoadingd, setLoadingd] = useState(false); // State for loading indicator
+    const [dLoading, setDLoading] = useState(true)
     const navigate = useNavigate()
+
     useEffect(() => {
         if (Cookies.get('token') == null) {
             toast.error('Please Login to access this page.')
@@ -301,15 +303,15 @@ function Dashboard() {
         }
     };
 
-
-
     const fetchReviews = async () => {
         try {
             const response = await axios.get(`${Api}/hv-comapny/Reviews/getall`);
             setReviews(response.data);
+            setDLoading(false)
 
         } catch (error) {
             console.error('Error fetching Reviews:', error);
+            setDLoading(false)
         }
     };
 
@@ -364,7 +366,12 @@ function Dashboard() {
                     <section className=" text-white body-font">
                         <section className="text-gray-600 body-font">
                             <div className="containera px-5 py- mx-auto">
-
+                            {dLoading ? ( // Show loading state
+                <div className="flex justify-center items-center h-screen mx-auto">
+                    <p className="text-2xl text-gray-500">Loading...</p>
+                </div>
+            ) : (
+                <>
                                 {Reviews.length === 0 ? ( // Check if there are no Reviews
                                     <div className="flex justify-center items-center h-64">
                                         <p className="text-xl text-gray-300">No Reviews available</p>
@@ -393,6 +400,8 @@ function Dashboard() {
 
                                     </div>
                                 )}
+                                </>
+            )}
                             </div>
                         </section>
                     </section>
