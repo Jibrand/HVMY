@@ -8,9 +8,9 @@ const Hero = () => {
     return (
         <>
 
-            <section class="banner-top  bg-transparent conatiner mx-auto">
-                <div class="container px-5  mt-20 mx-auto">
-                    <div class="flex flex-col text-center w-full mb-20">
+            <section className="banner-top  bg-transparent conatiner mx-auto">
+                <div className="container px-5  mt-20 mx-auto">
+                    <div className="flex flex-col text-center w-full mb-20">
                         <a href="">
                             <img src={logo} alt="" className='mb-10 h-11 w-auto mx-auto' />
                             <img src={CategoryCreator} alt="" className='mx-auto h-60 w-auto mb-12' />
@@ -31,7 +31,7 @@ const Hero = () => {
                         </p>
 
                         <div className="caption-area text-center bg-transparent mt-8">
-                            <button onClick={() => { window.open("https://hackerverse.quest/", "_blank"); }} class=" rounded-md font-semibold bg-[#a0ff00] hover:text-black hover:bg-[#8cba3e]  py-2 px-4 ">
+                            <button onClick={() => { window.open("https://hackerverse.quest/", "_blank"); }} className=" rounded-md font-semibold bg-[#a0ff00] hover:text-black hover:bg-[#8cba3e]  py-2 px-4 ">
                             Join the PoC Revolution Now!
                             </button>
                         </div>

@@ -19,12 +19,16 @@ import HV_NEW_AI_Machine from '../../img/new/HV_NEW_AI_Machine_blues (1).png';
 const Quote = lazy(() => import('./Quote'));
 const Paragraph = lazy(() => import('./Paragraph'));
 const Hero = lazy(() => import('./Hero'));
+const Newsletter = lazy(() => import('./Newsletter'));
+const Footer = lazy(() => import('./Footer'));
+const Testimonials = lazy(() => import('./Testimonials'));
+const Index1 = lazy(() => import('./Teams'));
 
 const index = () => {
     return (
         <>
             <Hero />
-            <section className="bg-transparent container mx-auto py-24 lg:sm:w-[80%] md:sm:w-[80%]" id="view-down">
+            <section className="bg-transparent container mx-auto py- lg:sm:w-[80%] md:sm:w-[80%]" id="view-down">
                 <div className="custom-container">
                     <div className="row">
                         <div className="col-md-12">
@@ -116,7 +120,7 @@ const index = () => {
                             </div>
                         </section>
                         <div className="caption-area text-center bg-transparent mt-5">
-                            <button onClick={() => { window.open("https://hackerverse.quest/", "_blank"); }} class=" rounded-md font-semibold bg-[#a0ff00] hover:text-black hover:bg-[#8cba3e]  py-2 px-4 ">
+                            <button onClick={() => { window.open("https://hackerverse.quest/", "_blank"); }} className=" rounded-md font-semibold bg-[#a0ff00] hover:text-black hover:bg-[#8cba3e]  py-2 px-4 ">
                                 Skull Jack the HACKERverse®
                             </button>
                         </div>
@@ -140,23 +144,23 @@ const index = () => {
                                 </div>
                             </section>
                             <div className="caption-area text-center bg-transparent mt-5">
-                                <button onClick={() => { window.open("https://hackerverse.quest/", "_blank"); }} class=" rounded-md font-semibold bg-[#a0ff00] hover:text-black hover:bg-[#8cba3e]  py-2 px-4 ">
+                                <button onClick={() => { window.open("https://hackerverse.quest/", "_blank"); }} className=" rounded-md font-semibold bg-[#a0ff00] hover:text-black hover:bg-[#8cba3e]  py-2 px-4 ">
                                     Immerse yourself in the HACKERverse®
                                 </button>
                             </div>
                             <br/>
                             <Paragraph />
-                            {/* 
+                            
                             <Testimonials />
-                            <Index1 /> */}
+                            <Index1 />
 
                             {/* <div className="col-md-12">
                                 <Blogs />
                                 <Spotify />
                                 <PodcastVideo />
+                            </div> */}
                                 <Newsletter />
                                 <Footer />
-                            </div> */}
                         </div>
                     </div>
                 </div>
