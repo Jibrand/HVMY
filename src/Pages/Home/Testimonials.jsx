@@ -69,25 +69,38 @@ const Index = () => {
                 </div>
             </section>
 
-            {isLoading ? (
-                <div className="loader">Loading...</div>
+            {isLoading ? ( // Show loading state
+                <div className="flex justify-center items-center h-screen mx-auto">
+                    <p className="text-2xl text-gray-500">Loading...</p>
+                </div>
             ) : (
-                <Carousel ref={carouselRef} responsive={responsive} focusOnSelect={true}    >
-                    {reviews.map((testimonial, index) => (
-                        <div key={index} className="max-w-xl mt-12 mx-auto p-4 mb-14 cursor-pointer picbox1 rounded-2xl bg-transparent">
-                            <div className="flex flex-col items-center text-center">
-                                <img src={testimonial.pic} loading="lazy" className="w-28 h-28 rounded-full shadow-[0_2px_22px_-4px_rgba(93,96,127,0.6)] " alt={testimonial.name} />
-                                <div className="mt-4">
-                                    <h4 className="text-sm font-extrabold text-white">{testimonial.name}</h4>
-                                    <p className="text-xs text-[#a0ff00] font-bold mt-1">{testimonial.designation}</p>
-                                </div>
-                            </div>
-                            <div className="mt-4 text-center">
-                                <p className="text-sm leading-relaxed text-gray-400">{testimonial.review}</p>
-                            </div>
+                <>
+                    {reviews.length == 0 ? ( // Check if there are no Blogs
+                        <div className="flex justify-center items-center  mx-auto">
+                            <p className="text-xl text-gray-300 mb-20">No Reviews available</p>
                         </div>
-                    ))}
-                </Carousel>
+                    ) : (
+                        <>
+                            <Carousel ref={carouselRef} responsive={responsive} focusOnSelect={true}    >
+                                {reviews.map((testimonial, index) => (
+                                    <div key={index} className="max-w-xl mt-12 mx-auto p-4 mb-14 cursor-pointer picbox1 rounded-2xl bg-transparent">
+                                        <div className="flex flex-col items-center text-center">
+                                            <img src={testimonial.pic} loading="lazy" className="w-28 h-28 rounded-full shadow-[0_2px_22px_-4px_rgba(93,96,127,0.6)] " alt={testimonial.name} />
+                                            <div className="mt-4">
+                                                <h4 className="text-sm font-extrabold text-white">{testimonial.name}</h4>
+                                                <p className="text-xs text-[#a0ff00] font-bold mt-1">{testimonial.designation}</p>
+                                            </div>
+                                        </div>
+                                        <div className="mt-4 text-center">
+                                            <p className="text-sm leading-relaxed text-gray-400">{testimonial.review}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </Carousel>
+                        </>
+                    )}
+
+                </>
             )}
             <div className="caption-area text-center bg-transparent  - mb-24 ">
                 <button onClick={handleClick} class=" rounded-md font-semibold bg-[#a0ff00] hover:text-black hover:bg-[#8cba3e]  py-2 px-4 ">

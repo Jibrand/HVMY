@@ -23,6 +23,9 @@ const Newsletter = lazy(() => import('./Newsletter'));
 const Footer = lazy(() => import('./Footer'));
 const Testimonials = lazy(() => import('./Testimonials'));
 const Index1 = lazy(() => import('./Teams'));
+const Blogs = lazy(() => import('./Blogs'));
+const Spotify = lazy(() => import('./Spotify'));
+const PodcastVideo = lazy(() => import('./PodcastVideo'));
 
 const index = () => {
     return (
@@ -154,11 +157,11 @@ const index = () => {
                             <Testimonials />
                             <Index1 />
 
-                            {/* <div className="col-md-12">
+                            <div className="col-md-12">
                                 <Blogs />
                                 <Spotify />
                                 <PodcastVideo />
-                            </div> */}
+                            </div>
                                 <Newsletter />
                                 <Footer />
                         </div>
