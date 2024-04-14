@@ -37,45 +37,45 @@ const index = () => {
                     <div style={{ background: `url(${gif1}) center center / cover no-repeat` }}></div>
                     <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 gap- justify-center">
                         <div className="flex justify-center">
-                            <img loading="lazy" className="h-auto max-w-full rounded-lg" src='https://hvcompany.s3.us-west-2.amazonaws.com/team/aundriahairell_photo.png' alt="" />
+                            <img loading="lazy" className="h-auto max-w-full rounded-lg" src={CATEN8logo_onTrans} alt="" />
                         </div>
                         <div className="flex justify-center">
-                            <img loading="lazy" className="h-auto max-w-full rounded-lg" src='https://hvcompany.s3.us-west-2.amazonaws.com/team/aundriahairell_photo.png' alt="" />
+                            <img loading="lazy" className="h-auto max-w-full rounded-lg" src={DenteonENDingLogo_stacked_outlines_blackChrome} alt="" />
                         </div>
                         <div className="flex justify-center">
-                            <img loading="lazy" className="h-auto max-w-full rounded-lg" src='https://hvcompany.s3.us-west-2.amazonaws.com/team/aundriahairell_photo.png' alt="" />
+                            <img loading="lazy" className="h-auto max-w-full rounded-lg" src={HV_VIVAdere_CHROME} alt="" />
                         </div>
                         <div className="flex justify-center">
-                            <img loading="lazy" className="h-auto max-w-full rounded-lg" src='https://hvcompany.s3.us-west-2.amazonaws.com/team/aundriahairell_photo.png' alt="" />
+                            <img loading="lazy" className="h-auto max-w-full rounded-lg" src={HV_PROCYON_BLUEoriginal} alt="" />
                         </div>
                         <div className="flex justify-center">
-                            <img loading="lazy" className="h-auto max-w-full rounded-lg" src='https://hvcompany.s3.us-west-2.amazonaws.com/team/aundriahairell_photo.png' alt="" />
+                            <img loading="lazy" className="h-auto max-w-full rounded-lg" src={HV_PLEXtrac_LogoWithBlackOutline} alt="" />
                         </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-4 gap-10 justify-center -mt-6">
                         <div className="flex justify-center">
-                            <img loading="lazy" className="h-auto max-w-full rounded-lg" src='https://hvcompany.s3.us-west-2.amazonaws.com/team/aundriahairell_photo.png' alt="" />
+                            <img loading="lazy" className="h-auto max-w-full rounded-lg" src={Anonybit} alt="" />
                         </div>
                         <div className="flex justify-center">
-                            <img loading="lazy" className="h-auto max-w-full rounded-lg" src='https://hvcompany.s3.us-west-2.amazonaws.com/team/aundriahairell_photo.png' alt="" />
+                            <img loading="lazy" className="h-auto max-w-full rounded-lg" src={SPYDERswooshbat_PurpleBlue_onBlackChrome} alt="" />
                         </div>
                         <div className="flex justify-center">
-                            <img loading="lazy" className="h-auto max-w-full rounded-lg" src='https://hvcompany.s3.us-west-2.amazonaws.com/team/aundriahairell_photo.png' alt="" />
+                            <img loading="lazy" className="h-auto max-w-full rounded-lg" src={HV_HEIMDALLdata_vikingfire_chromeOutline} alt="" />
                         </div>
                         <div className="flex justify-center">
-                            <img loading="lazy" className="h-auto max-w-full rounded-lg" src='https://hvcompany.s3.us-west-2.amazonaws.com/team/aundriahairell_photo.png' alt="" />
+                            <img loading="lazy" className="h-auto max-w-full rounded-lg" src={HV_NATsec_unicorn_stickercut_blackChrome} alt="" />
                         </div>
                     </div>
                     <div className="flex">
                         <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 gap-1 justify-ter -mt-24 p-16">
                             <div className="  justify-center">
-                                <img loading="lazy" className="h-auto max-w-full rounded-lg" src='https://hvcompany.s3.us-west-2.amazonaws.com/team/aundriahairell_photo.png' alt="" />
+                                <img loading="lazy" className="h-auto max-w-full rounded-lg" src={HVbsideslogointro} alt="" />
                             </div>
                             <div className="  justify-center">
-                                <img loading="lazy" className="h-auto max-w-full" src='https://hvcompany.s3.us-west-2.amazonaws.com/team/aundriahairell_photo.png' alt="" />
+                                <img loading="lazy" className="h-auto max-w-full" src={DC719jack} alt="" />
                             </div>
                             <div className="flex justify-center items-start">
-                                <img loading="lazy" className="h-auto max-w-full rounded-lg" src='https://hvcompany.s3.us-west-2.amazonaws.com/team/aundriahairell_photo.png' alt="" />
+                                <img loading="lazy" className="h-auto max-w-full rounded-lg" src={SAEPiologo_stickercut} alt="" />
                             </div>
                         </div>
                     </div>
