@@ -111,6 +111,19 @@ hover-underline .testimonial-box:hover {
     z-index: 1000;
 }
 
+.demo-image {
+    /* border: #a0ff00 1px solid; */
+    box-shadow: #74b800 0px 0px 20px; /* Initial box shadow */
+    border-radius: 30px;
+    transition: box-shadow 0.5s ease; /* Smooth transition for box-shadow property */
+}
+
+.demo-image:hover {
+    cursor: pointer;
+    /* border: #a0ff00 1px solid; */
+    box-shadow: #74b800 0px 0px 50px; /* New box shadow on hover */
+}
+
 @media (max-width: 767px) {
     .hover-underline:hover::after {
         background-color: transparent;

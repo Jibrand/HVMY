@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { lazy } from 'react'
 
 import gif1 from '../../img/new/gif1.gif';
 import CATEN8logo_onTrans from '../../img/new/CATEN8logo_onTrans3.png';
@@ -14,7 +14,9 @@ import HV_VIVAdere_CHROME from '../../img/new/HV_VIVAdere_CHROME.png';
 import HVbsideslogointro from '../../img/new/HV-bsides-logo-intro.png';
 import SAEPiologo_stickercut from '../../img/new/SAEPiologo_stickercut.png';
 import BLUMIRApocscreen from '../../img/new/SENTEONpocscreen.jpg';
+import HV_NEW_AI_Machine from '../../img/new/HV_NEW_AI_Machine_blues (1).png';
 
+const Quote = lazy(() => import('./Quote'));
 
 const index = () => {
     return (
@@ -25,8 +27,8 @@ const index = () => {
                         <div className="col-md-12">
                             <div className="content-are">
                                 <article>
-                                    <div className="primary-heading">
-                                        <div className="lg:text-4xl md:text-4xl text-3xl text-white font-semibold hover-underline">
+                                    <div className="primary-heading text-center mb-5">
+                                        <div className="lg:text-4xl md:text-4xl text-3xl text-white font-bold hover-underline text-center">
                                             Meet our Rockstar Customers!
                                         </div>
                                     </div>
@@ -79,21 +81,21 @@ const index = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="caption-area text-center bg-transparent pb-24">
-                    </div>
-                    <div className="caption-area text-center bg-transparent mt-24 mb-24 ">
+
+                    <div className="caption-area text-center bg-transparent -mt-10  mb-24 ">
                         <button onClick={() => { window.open("https://hackerverse.quest/", "_blank"); }} className=" rounded-md font-semibold bg-[#a0ff00] hover:text-black hover:bg-[#8cba3e]  py-2 px-4 ">
                             Bug Out in the HACKERverse®
                         </button>
                     </div>
 
-                    {/* <Quote /> */}
-                    {/* 
+                    <Quote />
+
                     <div className="col-md-12 py-10 bg-transparent">
                         <div className="content-are">
+
                             <article>
-                                <div className="primary-heading">
-                                    <div className="title-lg mt-3 hover-underline">
+                                <div className="primary-heading text-center mb-5">
+                                    <div className="lg:text-4xl md:text-4xl text-3xl text-white font-bold hover-underline text-center">
                                         Our Killer POC
                                         <sup>
                                             <span className="" style={{ fontSize: 15 }}>TM</span>
@@ -110,21 +112,22 @@ const index = () => {
                                 </div>
                             </div>
                         </section>
-                        <div className="caption-area text-center bg-transparent mt-20">
-                            <button onClick={handleClick} class=" rounded-md font-semibold bg-[#a0ff00] hover:text-black hover:bg-[#8cba3e]  py-2 px-4 ">
+                        <div className="caption-area text-center bg-transparent mt-5">
+                            <button onClick={() => { window.open("https://hackerverse.quest/", "_blank"); }} class=" rounded-md font-semibold bg-[#a0ff00] hover:text-black hover:bg-[#8cba3e]  py-2 px-4 ">
                                 Skull Jack the HACKERverse®
                             </button>
                         </div>
 
-                        <div className="col-md-12 py-10">
+                        <div className="col-md-12 py-10 mt-20">
                             <div className="content-are">
+                               
                                 <article>
-                                    <div className="primary-heading pt-24">
-                                        <div className="title-lg mt-3 hover-underline">
-                                            How it Works
-                                        </div>
+                                <div className="primary-heading text-center mb-5">
+                                    <div className="lg:text-4xl md:text-4xl text-3xl text-white font-bold hover-underline text-center">
+                                    How it Works
                                     </div>
-                                </article>
+                                </div>
+                            </article>
                             </div>
                             <section className="text-gray-600 body-font">
                                 <div className="container px- py-[20px] mx-auto">
@@ -133,25 +136,25 @@ const index = () => {
                                     </div>
                                 </div>
                             </section>
-                            <div className="caption-area text-center bg-transparent mt-24">
-                                <button onClick={handleClick} class=" rounded-md font-semibold bg-[#a0ff00] hover:text-black hover:bg-[#8cba3e]  py-2 px-4 ">
+                            <div className="caption-area text-center bg-transparent mt-5">
+                                <button onClick={() => { window.open("https://hackerverse.quest/", "_blank"); }} class=" rounded-md font-semibold bg-[#a0ff00] hover:text-black hover:bg-[#8cba3e]  py-2 px-4 ">
                                     Immerse yourself in the HACKERverse®
                                 </button>
                             </div>
-
+                            {/* 
                             <Paragraph />
                             <Testimonials />
-                            <Index1 />
+                            <Index1 /> */}
 
-                            <div className="col-md-12">
+                            {/* <div className="col-md-12">
                                 <Blogs />
                                 <Spotify />
                                 <PodcastVideo />
                                 <Newsletter />
                                 <Footer />
-                            </div>
+                            </div> */}
                         </div>
-                    </div> */}
+                    </div>
                 </div>
             </section>
         </>
