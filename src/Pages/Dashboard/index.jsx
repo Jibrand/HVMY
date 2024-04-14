@@ -14,7 +14,7 @@ function Dashboard() {
         <div className="overflow-hidden border-b border-gray-200 rounded-md">
           <h3 className="mt-6 text-2xl font-semibold pt-7 ">Your Products  </h3>
           <div className="flex justify-end">
-            <button className=' bg-transparent  text-white rounded-md p-2 font-medium hover:bg-slate-800' >Add New +</button>
+            <button className=' bg-gray-500 text-white rounded-md p-2 font-medium hover:bg-slate-800' >Add New +</button>
           </div>
           <section className=" text-white body-font">
             <section className="text-gray-600 body-font">

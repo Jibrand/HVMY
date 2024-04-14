@@ -34,7 +34,7 @@ const Popup = ({ onClose, fetchTeams, setLoading, isLoading }) => {
         }
     };
 
-    const handleAddTeam =async () => {
+    const handleAddTeam = async () => {
         if (name == '' || !selectedImage || designation == '') {
             toast.error('Please fill all fields');
             return;
@@ -51,44 +51,44 @@ const Popup = ({ onClose, fetchTeams, setLoading, isLoading }) => {
 
 
 
-        const reader = new FileReader();
-        reader.onloadend = () => {
-            const base64String = reader.result.split(",")[1]; // Extracting base64 data
-            const fileName = selectedImage.name;
-            console.log(fileName);
-            axios.post(`${Api}/hv-comapny/Team/add`, {
-                name,
-                selectedImage: base64String,
-                fileName,
-                designation,
-            })
-                .then(response => {
-
-                    toast.success('Your Team is Added Successfully');
-                    fetchTeams()
-                    onClose()
-                    setLoading(false);
-
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                const base64String = reader.result.split(",")[1]; // Extracting base64 data
+                const fileName = selectedImage.name;
+                console.log(fileName);
+                axios.post(`${Api}/hv-comapny/Team/add`, {
+                    name,
+                    selectedImage: base64String,
+                    fileName,
+                    designation,
                 })
-                .catch(error => {
-                    console.error(error);
-                    setLoading(false);
-                    toast.error('Failed to Add');
+                    .then(response => {
 
-                });
-        };
-        reader.readAsDataURL(selectedImage); // Reading selected image as data URL
-    } catch (error) {
-        console.error('Error compressing image:', error);
-        setLoading(false);
-        toast.error('Failed to Add');
-    }
+                        toast.success('Your Team is Added Successfully');
+                        fetchTeams()
+                        onClose()
+                        setLoading(false);
+
+                    })
+                    .catch(error => {
+                        console.error(error);
+                        setLoading(false);
+                        toast.error('Failed to Add');
+
+                    });
+            };
+            reader.readAsDataURL(selectedImage); // Reading selected image as data URL
+        } catch (error) {
+            console.error('Error compressing image:', error);
+            setLoading(false);
+            toast.error('Failed to Add');
+        }
     };
 
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
-            <div className="fixed inset-0  bg-transparent  opacity-55"></div>
+            <div className="fixed inset-0  bg-black opacity-55"></div>
             <div className="bg-gray-800 rounded-lg p-8 max-w-md w-full relative picbox1 cursor-pointer">
                 <div className="absolute top-2 right-2 cursor-pointer" onClick={onClose}>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#a0ff00] hover:text-[#a0ff00]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -127,7 +127,7 @@ const Popup = ({ onClose, fetchTeams, setLoading, isLoading }) => {
                     <input disabled={isLoading} type="text" placeholder="Designation" className="w-full border-gray-300 rounded-md p-2" value={designation} onChange={(e) => setDesignation(e.target.value)} />
                 </div>
 
-                <button disabled={isLoading} className=" bg-transparent  text-white rounded-md p-2 font-medium hover:bg-slate-600 w-full" onClick={handleAddTeam}>Add Team</button>
+                <button disabled={isLoading} className=" bg-gray-500  text-white rounded-md p-2 font-medium hover:bg-slate-600 w-full" onClick={handleAddTeam}>Add Team</button>
             </div>
         </div>
     );
@@ -236,7 +236,7 @@ const Popup1 = ({ onClose, fetchTeams, TeamId, setLoadingu, isLoadingu }) => {
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
-            <div className="fixed inset-0  bg-transparent  opacity-55"></div>
+            <div className="fixed inset-0  bg-black opacity-55"></div>
             <div className="bg-gray-800 rounded-lg p-8 max-w-md w-full relative picbox1 cursor-pointer">
                 <div className="absolute top-2 right-2 cursor-pointer" onClick={onClose}>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#a0ff00] hover:text-[#a0ff00]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -266,7 +266,7 @@ const Popup1 = ({ onClose, fetchTeams, TeamId, setLoadingu, isLoadingu }) => {
                     <input disabled={isLoadingu} type="text" placeholder="Designation" className="w-full border-gray-300 rounded-md p-2" value={designation} onChange={(e) => setDesignation(e.target.value)} />
                 </div>
 
-                <button disabled={isLoadingu} className=" bg-transparent  text-white rounded-md p-2 font-medium hover:bg-slate-600 w-full" onClick={handleUpdateTeam}>Update Team</button>
+                <button disabled={isLoadingu} className=" bg-gray-500 text-white rounded-md p-2 font-medium hover:bg-slate-600 w-full" onClick={handleUpdateTeam}>Update Team</button>
             </div>
         </div>
     );
@@ -392,14 +392,14 @@ function Dashboard() {
                                                 {/* Font Awesome icons for update and delete actions */}
                                                 <div className="flex justify-center mt-4 space-x-4">
                                                     <button className="bg-gray-600 text-white rounded-md p-2 font-medium hover:bg-gray-800" onClick={() => handleUpdate(testimonial._id)}>
-                                                        <FontAwesomeIcon icon={faEdit} className="mr-2" />
+                                                        <FontAwesomeIcon icon={faEdit} className="mr" />
                                                     </button>
-                                                    <button className="bg-red-600 text-white rounded-md p-2 font-medium hover:bg-red-800" onClick={() => handleDelete(testimonial._id)}>
-                                                        <FontAwesomeIcon icon={faTrash} className="mr-2" />
+                                                    <button className="bg-red-600 text-white rounded-md px-2 font-medium hover:bg-red-800" onClick={() => handleDelete(testimonial._id)}>
+                                                        <FontAwesomeIcon icon={faTrash} className="mr-" />
                                                     </button>
                                                 </div>
                                             </div>
-                                        
+
                                         ))}
 
                                     </div>

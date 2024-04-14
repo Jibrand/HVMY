@@ -75,7 +75,7 @@ const Popup = ({ onClose, fetchReviews, setLoading, isLoading }) => {
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
-            <div className="fixed inset-0  bg-transparent  opacity-55"></div>
+            <div className="fixed inset-0  bg-black opacity-55"></div>
             <div className="bg-gray-800 rounded-lg p-8 max-w-md w-full relative picbox1 cursor-pointer">
                 <div className="absolute top-2 right-2 cursor-pointer" onClick={onClose}>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#a0ff00] hover:text-[#a0ff00]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -116,7 +116,7 @@ const Popup = ({ onClose, fetchReviews, setLoading, isLoading }) => {
                 <div className="mb-6">
                     <textarea disabled={isLoading} type="text" placeholder="Review...." className="w-full border-gray-300 rounded-md p-2" value={review} onChange={(e) => setreview(e.target.value)} />
                 </div>
-                <button disabled={isLoading} className=" bg-transparent  text-white rounded-md p-2 font-medium hover:bg-slate-600 w-full" onClick={handleAddReview}>Add Review</button>
+                <button disabled={isLoading} className=" bg-gray-500 text-white rounded-md p-2 font-medium hover:bg-slate-600 w-full" onClick={handleAddReview}>Add Review</button>
             </div>
         </div>
     );
@@ -229,7 +229,7 @@ const Popup1 = ({ onClose, fetchReviews, ReviewId, setLoadingu, isLoadingu }) =>
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
-            <div className="fixed inset-0  bg-transparent  opacity-55"></div>
+            <div className="fixed inset-0  bg-black opacity-55"></div>
             <div className="bg-gray-800 rounded-lg p-8 max-w-md w-full relative picbox1 cursor-pointer">
                 <div className="absolute top-2 right-2 cursor-pointer" onClick={onClose}>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#a0ff00] hover:text-[#a0ff00]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -261,7 +261,7 @@ const Popup1 = ({ onClose, fetchReviews, ReviewId, setLoadingu, isLoadingu }) =>
                 <div className="mb-6">
                     <textarea disabled={isLoadingu} type="text" placeholder="Review...." className="w-full border-gray-300 rounded-md p-2" value={review} onChange={(e) => setreview(e.target.value)} />
                 </div>
-                <button disabled={isLoadingu} className=" bg-transparent  text-white rounded-md p-2 font-medium hover:bg-slate-600 w-full" onClick={handleUpdateReview}>Update Review</button>
+                <button disabled={isLoadingu} className=" bg-gray-500 text-white rounded-md p-2 font-medium hover:bg-slate-600 w-full" onClick={handleUpdateReview}>Update Review</button>
             </div>
         </div>
     );

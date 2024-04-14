@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 // import Index from "./Pages/Home/index";
@@ -35,7 +35,8 @@ import './App.css'
 function App() {
 
   return (
-  <>
+    <>
+      <Suspense fallback={<div>Loading...</div>}>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -56,8 +57,9 @@ function App() {
             <Route path="/PrivacyAndPolicy" element={<PrivacyAndPolicy />} />
             <Route path="/T&C" element={<TC />} />
           </Routes>
-      </BrowserRouter>
-  </>
+        </BrowserRouter>
+      </Suspense>
+    </>
   )
 }
 

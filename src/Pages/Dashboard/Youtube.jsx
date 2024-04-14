@@ -42,7 +42,7 @@ const Popup = ({ onClose, fetchVodcasts, setLoading, isLoading }) => {
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
-            <div className="fixed inset-0  bg-transparent  opacity-55"></div>
+            <div className="fixed inset-0  bg-black opacity-55"></div>
             <div className="bg-gray-800 rounded-lg p-8 max-w-md w-full relative picbox1 cursor-pointer">
                 <div className="absolute top-2 right-2 cursor-pointer" onClick={onClose}>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#a0ff00] hover:text-[#a0ff00]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -52,7 +52,7 @@ const Popup = ({ onClose, fetchVodcasts, setLoading, isLoading }) => {
                 <div className="mb-6">
                     <textarea disabled={isLoading} type="text" placeholder="Vodcast Embedded Link...." className="w-full border-gray-300 rounded-md p-2" value={link} onChange={(e) => setlink(e.target.value)} />
                 </div>
-                <button disabled={isLoading} className=" bg-transparent  text-white rounded-md p-2 font-medium hover:bg-slate-600 w-full" onClick={handleAddVodcast}>Add Vodcast Video</button>
+                <button disabled={isLoading} className=" bg-gray-500 text-white rounded-md p-2 font-medium hover:bg-slate-600 w-full" onClick={handleAddVodcast}>Add Vodcast Video</button>
             </div>
         </div>
     );
@@ -64,7 +64,6 @@ const Popup1 = ({ onClose, fetchVodcasts, VodcastId, setLoadingu, isLoadingu }) 
 
     const fetchSingleVodcast = async () => {
         try {
-            alert(VodcastId)
             const response = await axios.get(`${Api}/hv-comapny/youtube/getsingle/${VodcastId}`);
             console.log(response.data);
             const { link } = response.data.Youtube;
@@ -108,7 +107,7 @@ const Popup1 = ({ onClose, fetchVodcasts, VodcastId, setLoadingu, isLoadingu }) 
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
-            <div className="fixed inset-0  bg-transparent  opacity-55"></div>
+            <div className="fixed inset-0  bg-black opacity-55"></div>
             <div className="bg-gray-800 rounded-lg p-8 max-w-md w-full relative picbox1 cursor-pointer">
                 <div className="absolute top-2 right-2 cursor-pointer" onClick={onClose}>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#a0ff00] hover:text-[#a0ff00]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -119,7 +118,7 @@ const Popup1 = ({ onClose, fetchVodcasts, VodcastId, setLoadingu, isLoadingu }) 
                 <div className="mb-6">
                     <textarea disabled={isLoadingu} type="text" placeholder="Vodcast...." className="w-full border-gray-300 rounded-md p-2" value={link} onChange={(e) => setlink(e.target.value)} />
                 </div>
-                <button disabled={isLoadingu} className=" bg-transparent  text-white rounded-md p-2 font-medium hover:bg-slate-600 w-full" onClick={handleUpdateVodcast}>Update Vodcast</button>
+                <button disabled={isLoadingu} className=" bg-gray-500 text-white rounded-md p-2 font-medium hover:bg-slate-600 w-full" onClick={handleUpdateVodcast}>Update Vodcast</button>
             </div>
         </div>
     );
@@ -232,24 +231,24 @@ function Dashboard() {
                                         {Vodcasts.map((Video) => (
                                             <>
                                                 <section className="text-gray-600 body-font">
-                                                    <div className="container px- py-[20px] mx-auto lg:p-32 md:p-32 p-2">
+                                                    <div className="container px- py-[20px] mx-auto  ">
                                                         {/* Vodcast Video Embed */}
                                                         <div className="relative overflow-hidden lg:pt-46 md:pt-46 pt-80">
 
 
                                                             {/* Replace 'VIDEO_ID' with your Vodcast video ID */}
                                                             <iframe
-                                                                className=" overflow-hidden absolute inset-0 w-full h-full rounded-lg lg:p-32 md:p-32 p-2"
+                                                                className=" overflow-hidden absolute inset-0 w-full h-full rounded-lg "
                                                                 src={Video.link}
                                                                 title="Vodcast Video"
                                                                 allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
                                                             ></iframe>
                                                              <div className="absolute top-4 right-4 flex space-x-4">
                                                             <button onClick={() => handleUpdate(Video._id)} className="bg-gray-600 text-white rounded-3xl p-2 font-medium hover:bg-gray-800">
-                                                                <FontAwesomeIcon icon={faEdit} className="mr-2" />
+                                                                <FontAwesomeIcon icon={faEdit} className="mr-" />
                                                             </button>
                                                             <button onClick={() => handleDelete(Video._id)} className="bg-red-600 text-white rounded-3xl p-2 font-medium hover:bg-red-800">
-                                                                <FontAwesomeIcon icon={faTrash} className="mr-2" />
+                                                                <FontAwesomeIcon icon={faTrash} className="mr-" />
                                                             </button>
                                                         </div>
                                                         </div>

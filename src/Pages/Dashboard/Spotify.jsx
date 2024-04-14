@@ -42,7 +42,7 @@ const Popup = ({ onClose, fetchSpotifys, setLoading, isLoading }) => {
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
-            <div className="fixed inset-0  bg-transparent  opacity-55"></div>
+            <div className="fixed inset-0  bg-black opacity-55"></div>
             <div className="bg-gray-800 rounded-lg p-8 max-w-md w-full relative picbox1 cursor-pointer">
                 <div className="absolute top-2 right-2 cursor-pointer" onClick={onClose}>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#a0ff00] hover:text-[#a0ff00]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -52,7 +52,7 @@ const Popup = ({ onClose, fetchSpotifys, setLoading, isLoading }) => {
                 <div className="mb-6">
                     <textarea disabled={isLoading} type="text" placeholder="Spotify Embedded Link...." className="w-full border-gray-300 rounded-md p-2" value={link} onChange={(e) => setlink(e.target.value)} />
                 </div>
-                <button disabled={isLoading} className=" bg-transparent  text-white rounded-md p-2 font-medium hover:bg-slate-600 w-full" onClick={handleAddSpotify}>Add Spotify Podcast</button>
+                <button disabled={isLoading} className=" bg-gray-500 text-white rounded-md p-2 font-medium hover:bg-slate-600 w-full" onClick={handleAddSpotify}>Add Spotify Podcast</button>
             </div>
         </div>
     );
@@ -106,7 +106,7 @@ const Popup1 = ({ onClose, fetchSpotifys, SpotifyId, setLoadingu, isLoadingu }) 
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
-            <div className="fixed inset-0  bg-transparent  opacity-55"></div>
+            <div className="fixed inset-0  bg-black opacity-55"></div>
             <div className="bg-gray-800 rounded-lg p-8 max-w-md w-full relative picbox1 cursor-pointer">
                 <div className="absolute top-2 right-2 cursor-pointer" onClick={onClose}>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#a0ff00] hover:text-[#a0ff00]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -117,7 +117,7 @@ const Popup1 = ({ onClose, fetchSpotifys, SpotifyId, setLoadingu, isLoadingu }) 
                 <div className="mb-6">
                     <textarea disabled={isLoadingu} type="text" placeholder="Spotify...." className="w-full border-gray-300 rounded-md p-2" value={link} onChange={(e) => setlink(e.target.value)} />
                 </div>
-                <button disabled={isLoadingu} className=" bg-transparent  text-white rounded-md p-2 font-medium hover:bg-slate-600 w-full" onClick={handleUpdateSpotify}>Update Spotify</button>
+                <button disabled={isLoadingu} className=" bg-gray-500 text-white rounded-md p-2 font-medium hover:bg-slate-600 w-full" onClick={handleUpdateSpotify}>Update Spotify</button>
             </div>
         </div>
     );
@@ -157,7 +157,6 @@ function Dashboard() {
         } finally {
         }
     };
-
 
     const fetchSpotifys = async () => {
         try {
@@ -229,24 +228,24 @@ function Dashboard() {
                                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                                         {Spotifys.map((Podcast, index) => (
                                             <section key={index} className="text-gray-600 body-font">
-                                                <div className="container px- py-[20px] mx-auto lg:p-32 md:p-32 p-2">
+                                                <div className="container px- py-[20px] mx-auto  ">
                                                     {/* YouTube Video Embed */}
                                                     <div className="relative overflow-hidden lg:pt-46 md:pt-46 pt-80">
                                                         {/* Replace 'VIDEO_ID' with your YouTube video ID */}
                                                         <iframe
-                                                            className="overflow-hidden absolute inset-0 w-full h-full rounded-lg lg:p-32 md:p-32 p-2"
+                                                            className="overflow-hidden absolute inset-0 w-full h-full rounded-lg  "
                                                             src={Podcast.link}
                                                             title="YouTube Video"
                                                             allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
                                                         ></iframe>
 
                                                         {/* Font Awesome icons for update and delete actions */}
-                                                        <div className="absolute top-4 right-4 flex space-x-4">
+                                                        <div className="absolute top-4 left-1 flex space-x-4">
                                                             <button onClick={() => handleUpdate(Podcast._id)} className="bg-gray-600 text-white rounded-3xl p-2 font-medium hover:bg-gray-800">
-                                                                <FontAwesomeIcon icon={faEdit} className="mr-2" />
+                                                                <FontAwesomeIcon icon={faEdit} className="mr-0" />
                                                             </button>
-                                                            <button onClick={() => handleDelete(Podcast._id)} className="bg-red-600 text-white rounded-3xl p-2 font-medium hover:bg-red-800">
-                                                                <FontAwesomeIcon icon={faTrash} className="mr-2" />
+                                                            <button onClick={() => handleDelete(Podcast._id)} className="bg-red-600 text-white rounded-3xl p-2   font-medium hover:bg-red-800">
+                                                                <FontAwesomeIcon icon={faTrash} className="ml-0" />
                                                             </button>
                                                         </div>
                                                  

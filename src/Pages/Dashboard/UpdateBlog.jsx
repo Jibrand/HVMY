@@ -74,7 +74,7 @@ const Popup = ({ onClose, fetchBlogs, setLoading, isLoading }) => {
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto ">
-            <div className="fixed inset-0  bg-transparent  opacity-55"></div>
+            <div className="fixed inset-0  bg-black opacity-55"></div>
             <div className="bg-gray-800 rounded-lg p-8 max-w-md w-full relative picbox1 cursor-poin ter">
                 <div className="absolute top-2 right-2 cursor-pointer" onClick={onClose}>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#a0ff00] hover:text-[#a0ff00]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -117,7 +117,7 @@ const Popup = ({ onClose, fetchBlogs, setLoading, isLoading }) => {
                     />
                     {/* <textarea disabled={isLoading} type="text" placeholder="Content...." className="w-full border-gray-300 rounded-md p-2" value={content} onChange={(e) => setcontent(e.target.value)} /> */}
                 </div>
-                <button disabled={isLoading} className=" bg-transparent  text-white rounded-md p-2 font-medium hover:bg-slate-600 w-full" onClick={handleAddBlog}>Add Blog</button>
+                <button disabled={isLoading} className=" bg-gray-500 text-white rounded-md p-2 font-medium hover:bg-slate-600 w-full" onClick={handleAddBlog}>Add Blog</button>
             </div>
         </div>
     );
@@ -225,7 +225,7 @@ const Popup1 = ({ onClose, fetchBlogs, BlogId, setLoadingu, isLoadingu }) => {
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
-            <div className="fixed inset-0  bg-transparent  opacity-55"></div>
+            <div className="fixed inset-0  bg-black opacity-55"></div>
             <div className="bg-gray-800 rounded-lg p-8 max-w-md w-full relative picbox1 cursor-pointer">
                 <div className="absolute top-2 right-2 cursor-pointer" onClick={onClose}>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#a0ff00] hover:text-[#a0ff00]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -254,7 +254,7 @@ const Popup1 = ({ onClose, fetchBlogs, BlogId, setLoadingu, isLoadingu }) => {
                     <textarea disabled={isLoadingu} type="text" placeholder="Content...." className="w-full border-gray-300 rounded-md p-2" value={content} onChange={(e) => setcontent(e.target.value)} />
                 </div>
 
-                <button disabled={isLoadingu} className=" bg-transparent  text-white rounded-md p-2 font-medium hover:bg-slate-600 w-full" onClick={handleUpdateBlog}>Update Blog</button>
+                <button disabled={isLoadingu} className=" bg-gray-500 text-white rounded-md p-2 font-medium hover:bg-slate-600 w-full" onClick={handleUpdateBlog}>Update Blog</button>
             </div>
         </div>
     );
@@ -484,7 +484,7 @@ function Dashboard() {
 
             <div className="flex flex-col mt-6 containera  mx-auto">
                 <div className="overflow-hidden border-b border-gray-200 rounded-md">
-                    <h3 className="mt-6 text-2xl font-semibold pt-7 text-gray-400 hover-underline">New Blog  </h3>
+                    <h3 className="mt-6 text-2xl font-semibold pt-7 text-gray-400 hover-underline">Update Blog  </h3>
                     <div className="flex justify-end">
                         <button className='bg-[#a0ff00] text-black rounded-md p-2 font-medium hover:bg-[#a0ff00]' onClick={()=>{handleUpdateBlog()}}  >Update Blog</button>
                     </div>
@@ -499,7 +499,7 @@ function Dashboard() {
                                             <div className="image-container bg-gray-200 rounded-lg overflow-hidden h-48 flex justify-center items-center">
                                                 <img alt="Blog" className="w-auto h-full object-cover object-center" src={selectedImage1} />
                                             </div>
-                                            <div className="absolute top-36  right-10 cursor-pointer mt-5 mr-5">
+                                            <div className="absolute top-36  right-10 cursor-pointer mt-10 -mr-3">
                                                 <label htmlFor="image" className="cursor-pointer">
                                                     <input type="file" id="image" accept="image/*" className="hidden" onChange={handleImageDrop} />
                                                     <FontAwesomeIcon icon={faEdit} className='h-6 w-6 bg-gray-300 p-2 rounded-2xl' />
