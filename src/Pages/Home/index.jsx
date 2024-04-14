@@ -1,4 +1,4 @@
-import React, { lazy } from 'react'
+import React from 'react'
 
 import gif1 from '../../img/new/gif1.gif';
 import CATEN8logo_onTrans from '../../img/new/CATEN8logo_onTrans3.png';
@@ -16,17 +16,16 @@ import SAEPiologo_stickercut from '../../img/new/SAEPiologo_stickercut.png';
 import BLUMIRApocscreen from '../../img/new/SENTEONpocscreen.jpg';
 import HV_NEW_AI_Machine from '../../img/new/HV_NEW_AI_Machine_blues (1).png';
 
-
-const Quote = lazy(() => import('./Quote'));
-const Paragraph = lazy(() => import('./Paragraph'));
-const Hero = lazy(() => import('./Hero'));
-const Newsletter = lazy(() => import('./Newsletter'));
-const Footer = lazy(() => import('./Footer'));
-const Testimonials = lazy(() => import('./Testimonials'));
-const Index1 = lazy(() => import('./Teams'));
-const Blogs = lazy(() => import('./Blogs'));
-const Spotify = lazy(() => import('./Spotify'));
-const PodcastVideo = lazy(() => import('./PodcastVideo'));
+import Quote from './Quote';
+import Paragraph from './Paragraph';
+import Hero from './Hero';
+import Newsletter from './Newsletter';
+import Footer from './Footer';
+import Testimonials from './Testimonials';
+import Index1 from './Teams';
+import Blogs from './Blogs';
+import Spotify from './Spotify';
+import PodcastVideo from './PodcastVideo'
 
 const index = () => {
     return (
