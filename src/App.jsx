@@ -8,6 +8,8 @@ import SingleBlog from './Pages/Blogs/SingleBlog'
 import Login from "./Pages/Login";
 import PrivacyAndPolicy from "./Pages/PrivacyAndPolicy";
 import TC from './Pages/T&C'
+import Forget1 from "./Pages/Forget1";
+import Forget2 from "./Pages/Forget2";
 
 // Lazy loading components
 // const Index = React.lazy(() => import("./Pages/Dashboard"));
@@ -42,8 +44,8 @@ function App() {
             <Route path="/NewBlog" element={<NewBlog />} />
             <Route path="/UpdateBlog/:id" element={<UpdateBlog />} /> */}
             <Route path="/Contact" element={<Contact />} />
-            {/* <Route path="/ResetPasswordemail" element={<Forget1 />} />
-            <Route path="/reset-new-password/:id/:token" element={<Forget2 />} /> */}
+            <Route path="/ResetPasswordemail" element={<Forget1 />} />
+            <Route path="/reset-new-password/:id/:token" element={<Forget2 />} />
             <Route path="/PrivacyAndPolicy" element={<PrivacyAndPolicy />} />
             <Route path="/T&C" element={<TC />} />
           </Routes>
